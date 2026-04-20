@@ -170,6 +170,39 @@ int index_load(Index *index) {
 //
 // Returns 0 on success, -1 on error.
 
+static int cmp_entries(const void *a, const void *b) {
+    return strcmp(((IndexEntry *)a)->path, ((IndexEntry *)b)->path);
+}
+
+int index_save(const Index *index) {
+    Index sorted = *index;
+    qsort(sorted.entries, sorted.count, sizeof(IndexEntry), cmp_entries);
+
+    char temp[] = ".pes/index.tmp";
+
+    FILE *f = fopen(temp, "w");
+    if (!f) return -1;
+
+    for (int i = 0; i < sorted.count; i++) {
+        char hex[HASH_HEX_SIZE + 1];
+        hash_to_hex(&sorted.entries[i].hash, hex);
+
+        fprintf(f, "%o %s %ld %zu %s\n",
+                sorted.entries[i].mode,
+                hex,
+                sorted.entries[i].mtime_sec,
+                sorted.entries[i].size,
+                sorted.entries[i].path);
+    }
+
+    fflush(f);
+    fsync(fileno(f));
+    fclose(f);
+
+    rename(temp, INDEX_FILE);
+    return 0;
+}
+
 // Stage a file for the next commit.
 //
 // HINTS - Useful functions and syscalls:
