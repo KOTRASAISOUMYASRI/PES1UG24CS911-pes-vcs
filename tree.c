@@ -135,5 +135,3 @@ int tree_from_index(ObjectID *id_out) {
     // TODO: Implement recursive tree building
     // (See Lab Appendix for logical steps)
     (void)id_out;
-    return -1;
-}
