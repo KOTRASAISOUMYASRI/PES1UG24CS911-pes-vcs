@@ -376,11 +376,11 @@ The test program verifies:
 
 **📸 Screenshot 1A:** Output of `./test_objects` showing all tests passing.
         
-        <img src="screenshots/1a.png" width="1000"/>
+ <img src="screenshots/1a.png" width="1000"/>
 
 **📸 Screenshot 1B:** `find .pes/objects -type f` showing the sharded directory structure.
         
-        <img src="screenshots/1b.png" width="1000"/>
+ <img src="screenshots/1b.png" width="1000"/>
         
 ---
 
@@ -412,11 +412,11 @@ The test program verifies:
 
 **📸 Screenshot 2A:** Output of `./test_tree` showing all tests passing.
 
-        <img src="screenshots/2a.png" width="1000"/>
+ <img src="screenshots/2a.png" width="1000"/>
 
 **📸 Screenshot 2B:** Pick a tree object from `find .pes/objects -type f` and run `xxd .pes/objects/XX/YYY... | head -20` to show the raw binary format.
 
-        <img src="screenshots/2b.png" width="1000"/>
+ <img src="screenshots/2b.png" width="1000"/>
         
 ---
 
@@ -474,11 +474,11 @@ cat .pes/index    # Human-readable text format
 
 **📸 Screenshot 3A:** Run `./pes init`, `./pes add file1.txt file2.txt`, `./pes status` — show the output.
 
-        <img src="screenshots/3a.png" width="1000"/>
+ <img src="screenshots/3a.png" width="1000"/>
 
 **📸 Screenshot 3B:** `cat .pes/index` showing the text-format index with your entries.
 
-        <img src="screenshots/3b.png" width="1000"/>
+ <img src="screenshots/3b.png" width="1000"/>
 
 ---
 
@@ -529,15 +529,15 @@ make test-integration
 
 **📸 Screenshot 4A:** Output of `./pes log` showing three commits with hashes, authors, timestamps, and messages.
 
-        <img src="screenshots/4a.png" width="1000"/>
+ <img src="screenshots/4a.png" width="1000"/>
 
 **📸 Screenshot 4B:** `find .pes -type f | sort` showing object store growth after three commits.
 
-        <img src="screenshots/4b.png" width="1000"/>
+ <img src="screenshots/4b.png" width="1000"/>
 
 **📸 Screenshot 4C:** `cat .pes/refs/heads/main` and `cat .pes/HEAD` showing the reference chain.
 
-        <img src="screenshots/4c.png" width="1000"/>
+ <img src="screenshots/4c.png" width="1000"/>
 
 ---
 
